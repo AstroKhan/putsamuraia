@@ -1,16 +1,16 @@
 import s from './Profile.module.css';
 import Myposts from './Myposts/Myposts.jsx';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = () => {
+const Profile = (props) => {
+
     return (
 <div className={s.profile}>
-    <div>
-    <img src="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"/>
-    </div>
-    <div>
-      ava + description
-    </div>
-    <Myposts />
+    <ProfileInfo />
+    <Myposts posts={props.profilePage.posts}
+     newPostText={props.profilePage.newPostText}
+     updateNewPostText={props.updateNewPostText}
+     addPost={props.addPost} />
     </div>
     )
 }
