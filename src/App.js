@@ -9,6 +9,7 @@ import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route } from 'react-router-dom';
 import store, { addPost, updateNewPostText } from './redux/state';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 
@@ -22,7 +23,7 @@ function App(props) {
     <div className="app-wrapper-content">
 
     
-    <Route path='/dialogs' render={ () => <Dialogs store={props.store} />} />
+    <Route path='/dialogs' render={ () => <DialogsContainer store={props.store} />} />
     <Route path='/profile' render={ () => <Profile store={props.store} />} />
     <Route path='/news' render={ () => <News />} />
     <Route path='/music' render={ () => <Music />} />
