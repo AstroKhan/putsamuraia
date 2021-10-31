@@ -22,6 +22,8 @@ const App = () => {
     <Route path='/dialogs' render={ () => <DialogsContainer />} />
     <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
     <Route path='/users' render={ () => <UsersContainer />} />
+    <Route path='/login' render={ () => <UsersContainer />} />
+
     <Route path='/news' render={ () => <News />} />
     <Route path='/music' render={ () => <Music />} />
     <Route path='/settings' render={ () => <Settings />} />
