@@ -16,9 +16,7 @@ componentDidMount() {
         userId = 2;
     }
     this.props.getUserProfile(userId);
-    setTimeout(() => {
-        this.props.getStatus(userId);
-    }, 1000);
+    this.props.getStatus(userId);
 }
 
 render() {
