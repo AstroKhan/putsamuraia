@@ -5,14 +5,26 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import LoginPage from './components/Login/Login';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { initializeApp } from './redux/app-reducer';
+import { compose } from 'redux';
+import Preloader from './components/common/Preloader/Preloader';
 
 
 
-const App = () => {
+class App extends Component {
+  componentDidMount() {
+    this.props.initializeApp();
+}
+  render() {
+    if (!this.props.initialized) {
+    return <Preloader/>
+}
   return (
     <div className="app-wrapper">
     <HeaderContainer />
@@ -32,6 +44,13 @@ const App = () => {
     </div>
   );
 };
+}
 
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
 
-export default App;
+export default compose(
+  withRouter,
+  connect(mapStateToProps, {initializeApp})) (App);
+
