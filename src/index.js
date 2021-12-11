@@ -20,7 +20,7 @@ document.querySelector("body").appendChild(h1) */
     ,
     document.getElementById('root')
   );
-
+// 89 урок тесты, вывести обертки апп в апп.джс
 
 //ServiceWorker.unregister();
 
