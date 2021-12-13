@@ -2,25 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import App from './App';
-import store from './redux/redux-store';
-import { BrowserRouter, Route } from 'react-router-dom';
-import {Provider} from 'react-redux';
+import SamuraiJSApp from './App';
 
-/* let h1 = document.createElement("h1")
-h1.innerHTML = "Hello"
-document.querySelector("body").appendChild(h1) */
 
-  ReactDOM.render (
-    <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-    </BrowserRouter>
-    ,
-    document.getElementById('root')
-  );
-// 89 урок тесты, вывести обертки апп в апп.джс
+
+ReactDOM.render(<SamuraiJSApp />, document.getElementById('root'));
+
 
 //ServiceWorker.unregister();
 
